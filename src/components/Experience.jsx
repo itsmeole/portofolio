@@ -3,20 +3,20 @@ import React from 'react';
 const Experience = () => {
     const experiences = [
         {
-            title: "Ketua Divisi Tekinkom",
+            title: "Head of Tekinkom Division",
             company: "HUMANIKA STT WASTUKANCANA PURWAKARTA",
             period: "2025 - 2026",
             desc: [
-                "Merancang Program kerja selama satu periode ke depan.",
-                "Mengelola jobdesk anggota demi melancarkan rancangan program kerja."
+                "Designing work programs for the upcoming period.",
+                "Managing member job descriptions to facilitate work program implementation."
             ]
         },
         {
-            title: "Anggota Divisi Tekinkom",
+            title: "Member of Tekinkom Division",
             company: "HUMANIKA STT WASTUKANCANA PURWAKARTA",
             period: "2025",
             desc: [
-                "Membantu mahasiswa dalam mengembangkan keterampilan akademik."
+                "Assisting students in developing academic skills."
             ]
         },
         {
@@ -24,32 +24,32 @@ const Experience = () => {
             company: "STT WASTUKANCANA PURWAKARTA",
             period: "2024",
             desc: [
-                "Mengadakan kegiatan belajar yang berkesinambungan."
+                "Conducting continuous learning activities."
             ]
         },
         {
-            title: "Asisten Dosen",
+            title: "Teaching Assistant",
             company: "STT WASTUKANCANA PURWAKARTA",
             period: "2023 - 2026",
             desc: [
-                "Melakukan penelitian bersama dosen terkait data statistik.",
-                "Membimbing mahasiswa dalam menyelesaikan tugas."
+                "Conducting research with lecturers regarding statistical data.",
+                "Guiding students in completing assignments."
             ]
         },
         {
-            title: "Operator Produksi",
+            title: "Production Operator",
             company: "ASTRA HONDA MOTOR",
             period: "2022 - 2023",
             desc: [
-                "Mengoperasikan mesin produksi sesuai dengan SOP."
+                "Operating production machines according to SOP."
             ]
         },
         {
-            title: "PKL - Teknisi",
+            title: "Internship - Technician",
             company: "NISSAN DATSUN PURWAKARTA",
             period: "2020 - 2021",
             desc: [
-                "Melakukan perawatan atau servis berkala pada kendaraan."
+                "Performing periodic maintenance or service on vehicles."
             ]
         }
     ];

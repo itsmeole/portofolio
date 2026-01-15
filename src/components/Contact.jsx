@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Contact = () => {
     return (
@@ -9,16 +11,20 @@ const Contact = () => {
                     I'm always open to discussing product design work or partnership opportunities.
                 </p>
 
-                <div className="glass-card" style={{ maxWidth: '500px', margin: '0 auto', padding: '3rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                        <a href="mailto:leonardputra73@wastukancana.ac.id" className="btn" style={{ background: '#fff', color: '#000', justifyContent: 'center', display: 'flex' }}>
-                            Send an Email
+                <div className="glass-card" style={{ maxWidth: '400px', margin: '0 auto', padding: '2rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', fontSize: '2.5rem' }}>
+                        <a href="mailto:leonardputra73@wastukancana.ac.id" style={{ color: 'white', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.2)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
+                            <MdEmail />
                         </a>
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-                            <a href="https://www.linkedin.com/in/leonard-putra-sanjaya-3367b629b" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', fontSize: '1.5rem' }}>LinkedIn</a>
-                            <a href="https://www.instagram.com/itsmeole?igsh=b3d3c3VjcHYydXp3" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', fontSize: '1.5rem' }}>Instagram</a>
-                            <a href="https://wa.me/message/UMYBVO7F56TJA1" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', fontSize: '1.5rem' }}>WhatsApp</a>
-                        </div>
+                        <a href="https://www.linkedin.com/in/leonard-putra-sanjaya-3367b629b" target="_blank" rel="noopener noreferrer" style={{ color: 'white', transition: 'transform 0.3s' }}>
+                            <FaLinkedin />
+                        </a>
+                        <a href="https://www.instagram.com/itsmeole?igsh=b3d3c3VjcHYydXp3" target="_blank" rel="noopener noreferrer" style={{ color: 'white', transition: 'transform 0.3s' }}>
+                            <FaInstagram />
+                        </a>
+                        <a href="https://wa.me/message/UMYBVO7F56TJA1" target="_blank" rel="noopener noreferrer" style={{ color: 'white', transition: 'transform 0.3s' }}>
+                            <FaWhatsapp />
+                        </a>
                     </div>
                 </div>
             </div>

@@ -205,3 +205,47 @@ body.light-mode .heading {
   display: inline-flex;
   gap: 20px;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  /* Hide Hero Image on Mobile */
+  .hero-image-container {
+    display: none !important;
+  }
+
+  /* Adjust Hero Text on Mobile */
+  #hero h1 {
+    font-size: 3rem !important;
+  }
+
+  #hero h2 {
+    font-size: 1.5rem !important;
+  }
+
+  #hero p {
+    text-align: center !important;
+  }
+
+  #hero .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #hero .btn-container {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

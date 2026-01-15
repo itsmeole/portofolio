@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap-reverse', position: 'relative', zIndex: 1 }}>
 
                 {/* Left Side - Image with Geometric Background */}
-                <div style={{ flex: '0 0 400px', position: 'relative' }}>
+                <div className="hero-image-container" style={{ flex: '0 0 400px', position: 'relative' }}>
                     {/* Geometric Shapes */}
                     <div style={{
                         position: 'absolute',
@@ -84,12 +84,13 @@ const Hero = () => {
                         color: '#a3a3a3',
                         maxWidth: '600px',
                         marginBottom: '3rem',
-                        fontWeight: 400
+                        fontWeight: 400,
+                        textAlign: 'justify'
                     }}>
                         Computer Science student with a strong leadership track record. Experienced in statistical data management and high work discipline from an industrial background.
                     </p>
 
-                    <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                    <div className="btn-container" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                         <button className="btn" style={{
                             padding: '16px 40px',
                             fontSize: '1.1rem',
@@ -97,7 +98,7 @@ const Hero = () => {
                             background: '#1a1a1a',
                             border: '1px solid rgba(255,255,255,0.1)',
                             color: 'white'
-                        }} onClick={() => {window.open('https://wa.me/message/UMYBVO7F56TJA1', '_blank');}}>
+                        }} onClick={() => { window.open('https://wa.me/message/UMYBVO7F56TJA1', '_blank'); }}>
                             Start a conversation
                         </button>
                         <a href={cvFile} download="CV_Leonard_Putra" className="btn" style={{

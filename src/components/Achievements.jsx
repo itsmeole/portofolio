@@ -16,18 +16,18 @@ import cert12 from '../assets/capaian dan penghargaan/sertifikat_course_dicoding
 
 const Achievements = () => {
     const achievements = [
-        { id: 1, title: 'Pelatihan AI Product by Google', file: cert2, type: 'image' },
-        { id: 2, title: 'Pemateri Workshop Data Analyst', file: cert3, type: 'image' },
-        { id: 3, title: 'Seminar Gemini For Everyone', file: cert5, type: 'image' },
-        { id: 4, title: 'Seminar Google Student Ambassador', file: cert6, type: 'image' },
-        { id: 5, title: 'Seminar Nasional KWU', file: cert7, type: 'image' },
-        { id: 6, title: 'Webinar Genzpreneur', file: cert8, type: 'image' },
-        { id: 7, title: 'Jurnal Penelitian 1', file: cert1, type: 'pdf' },
-        { id: 8, title: 'Jurnal Penelitian 2', file: cert4, type: 'pdf' },
-        { id: 9, title: 'Sertifikat HKI', file: cert9, type: 'pdf' },
-        { id: 10, title: 'Belajar Membuat Aplikasi Android untuk Pemula', file: cert10, type: 'pdf' },
-        { id: 11, title: 'Memulai Pemrograman dengan Kotlin', file: cert11, type: 'pdf' },
-        { id: 12, title: 'Akselerasi Karier dan Produktivitas dengan Gemini', file: cert12, type: 'pdf' },
+        { id: 1, title: 'AI Product Training by Google', file: cert2, type: 'image' },
+        { id: 2, title: 'Speaker at Data Analyst Workshop', file: cert3, type: 'image' },
+        { id: 3, title: 'Seminar on Gemini For Everyone', file: cert5, type: 'image' },
+        { id: 4, title: 'Google Student Ambassador Seminar', file: cert6, type: 'image' },
+        { id: 5, title: 'National Entrepreneurship Seminar', file: cert7, type: 'image' },
+        { id: 6, title: 'Genzpreneur Webinar', file: cert8, type: 'image' },
+        { id: 7, title: 'Research Journal 1', file: cert1, type: 'pdf' },
+        { id: 8, title: 'Research Journal 2', file: cert4, type: 'pdf' },
+        { id: 9, title: 'HKI Certificate', file: cert9, type: 'pdf' },
+        { id: 10, title: 'Learn to Build Android Apps for Beginners', file: cert10, type: 'pdf' },
+        { id: 11, title: 'Starting Programming with Kotlin', file: cert11, type: 'pdf' },
+        { id: 12, title: 'Career Acceleration and Productivity with Gemini', file: cert12, type: 'pdf' },
     ];
 
     return (
