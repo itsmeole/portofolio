@@ -24,18 +24,18 @@ import { FaFilePdf } from "react-icons/fa6";
 
 const Achievements = () => {
     const achievements = [
-        { id: 1, title: 'AI Product Training by Google', file: cert2, type: 'image' },
-        { id: 2, title: 'Speaker at Data Analyst Workshop', file: cert3, type: 'image' },
-        { id: 3, title: 'Seminar on Gemini For Everyone', file: cert5, type: 'image' },
-        { id: 4, title: 'Google Student Ambassador Seminar', file: cert6, type: 'image' },
-        { id: 5, title: 'National Entrepreneurship Seminar', file: cert7, type: 'image' },
-        { id: 6, title: 'Genzpreneur Webinar', file: cert8, type: 'image' },
-        { id: 7, title: 'Research Journal 1', file: cert1, type: 'pdf', thumbnail: thumbnail1 },
-        { id: 8, title: 'Research Journal 2', file: cert4, type: 'pdf', thumbnail: thumbnail4 },
-        { id: 9, title: 'HKI Certificate', file: cert9, type: 'pdf', thumbnail: thumbnail9 },
-        { id: 10, title: 'Certificate of Learn to Build Android Apps for Beginners', file: cert10, type: 'pdf', thumbnail: thumbnail10 },
-        { id: 11, title: 'Certificate of Starting Programming with Kotlin', file: cert11, type: 'pdf', thumbnail: thumbnail11 },
-        { id: 12, title: 'Certificate of Career Acceleration and Productivity with Gemini', file: cert12, type: 'pdf', thumbnail: thumbnail12 },
+        { id: 1, title: 'Research Journal 1', file: cert1, type: 'pdf', thumbnail: thumbnail1 },
+        { id: 2, title: 'Research Journal 2', file: cert4, type: 'pdf', thumbnail: thumbnail4 },
+        { id: 3, title: 'HKI Certificate', file: cert9, type: 'pdf', thumbnail: thumbnail9 },
+        { id: 4, title: 'Certificate of Learn to Build Android Apps for Beginners', file: cert10, type: 'pdf', thumbnail: thumbnail10 },
+        { id: 5, title: 'Certificate of Starting Programming with Kotlin', file: cert11, type: 'pdf', thumbnail: thumbnail11 },
+        { id: 6, title: 'Certificate of Career Acceleration and Productivity with Gemini', file: cert12, type: 'pdf', thumbnail: thumbnail12 },
+        { id: 7, title: 'AI Product Training by Google', file: cert2, type: 'image' },
+        { id: 8, title: 'Speaker at Data Analyst Workshop', file: cert3, type: 'image' },
+        { id: 9, title: 'Seminar on Gemini For Everyone', file: cert5, type: 'image' },
+        { id: 10, title: 'Google Student Ambassador Seminar', file: cert6, type: 'image' },
+        { id: 11, title: 'National Entrepreneurship Seminar', file: cert7, type: 'image' },
+        { id: 12, title: 'Genzpreneur Webinar', file: cert8, type: 'image' },
     ];
 
     return (
