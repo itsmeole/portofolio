@@ -140,6 +140,15 @@ ul {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.hero-btn {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
 /* Light Mode */
 body.light-mode {
   --bg-color: #f8fafc;
@@ -223,15 +232,21 @@ body.light-mode .heading {
 
   /* Adjust Hero Text on Mobile */
   #hero h1 {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
+    /* Reduced from 3rem */
   }
 
   #hero h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
+    /* Reduced from 1.5rem */
+    margin-bottom: 0.5rem !important;
   }
 
   #hero p {
     text-align: center !important;
+    font-size: 0.95rem !important;
+    /* Reduced size */
+    margin-bottom: 2rem !important;
   }
 
   #hero .container {
@@ -241,6 +256,28 @@ body.light-mode .heading {
 
   #hero .btn-container {
     justify-content: center;
+    gap: 1rem !important;
+  }
+
+  /* Optimize Buttons for Mobile */
+  .hero-btn {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
+    width: auto;
+  }
+
+  /* Reduce About Me Background Text */
+  .gradient-text-bg {
+    font-size: 3.5rem !important;
+    /* Reduced from 10rem */
+    bottom: 150px !important;
+  }
+
+  /* Reduce gap specifically between Hero and About on mobile */
+  #about {
+    padding-top: 0px !important;
+    margin-top: -149px !important;
+    /* Pulling it closer with negative margin */
   }
 }
 

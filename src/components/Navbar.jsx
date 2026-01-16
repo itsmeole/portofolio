@@ -187,6 +187,7 @@ const Navbar = () => {
                         onClick={() => setShowThemeMenu(!showThemeMenu)}
                         style={{
                             padding: '8px 24px 8px 8px',
+                            marginLeft: '-20px',
                             display: 'flex',
                             alignItems: 'center',
                             gap: '12px',

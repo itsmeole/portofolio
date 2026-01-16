@@ -91,24 +91,10 @@ const Hero = () => {
                     </p>
 
                     <div className="btn-container" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                        <button className="btn" style={{
-                            padding: '16px 40px',
-                            fontSize: '1.1rem',
-                            borderRadius: '50px',
-                            background: '#1a1a1a',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            color: 'white'
-                        }} onClick={() => { window.open('https://wa.me/message/UMYBVO7F56TJA1', '_blank'); }}>
+                        <button className="btn hero-btn" onClick={() => { window.open('https://wa.me/message/UMYBVO7F56TJA1', '_blank'); }}>
                             Start a conversation
                         </button>
-                        <a href={cvFile} download="CV_Leonard_Putra" className="btn" style={{
-                            padding: '16px 40px',
-                            fontSize: '1.1rem',
-                            borderRadius: '50px',
-                            background: '#1a1a1a',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            color: 'white'
-                        }}>
+                        <a href={cvFile} download="CV_Leonard_Putra" className="btn hero-btn">
                             Lihat CV
                         </a>
                     </div>

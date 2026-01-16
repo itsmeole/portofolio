@@ -13,6 +13,14 @@ import cert9 from '../assets/capaian dan penghargaan/sertifikat_HKI_2025-11-19.p
 import cert10 from '../assets/capaian dan penghargaan/sertifikat_course_dicoding_51_5325938_211225043516.pdf';
 import cert11 from '../assets/capaian dan penghargaan/sertifikat_course_dicoding_80_5325938_301025165202.pdf';
 import cert12 from '../assets/capaian dan penghargaan/sertifikat_course_dicoding_890_5325938_311225141134.pdf';
+import thumbnail1 from '../assets/capaian dan penghargaan/Jurnal1.png';
+import thumbnail4 from '../assets/capaian dan penghargaan/Jurnal2.png';
+import thumbnail9 from '../assets/capaian dan penghargaan/HKI.png';
+import thumbnail10 from '../assets/capaian dan penghargaan/dicoding10.png';
+import thumbnail11 from '../assets/capaian dan penghargaan/dicoding11.png';
+import thumbnail12 from '../assets/capaian dan penghargaan/dicoding12.png';
+
+import { FaFilePdf } from "react-icons/fa6";
 
 const Achievements = () => {
     const achievements = [
@@ -22,12 +30,12 @@ const Achievements = () => {
         { id: 4, title: 'Google Student Ambassador Seminar', file: cert6, type: 'image' },
         { id: 5, title: 'National Entrepreneurship Seminar', file: cert7, type: 'image' },
         { id: 6, title: 'Genzpreneur Webinar', file: cert8, type: 'image' },
-        { id: 7, title: 'Research Journal 1', file: cert1, type: 'pdf' },
-        { id: 8, title: 'Research Journal 2', file: cert4, type: 'pdf' },
-        { id: 9, title: 'HKI Certificate', file: cert9, type: 'pdf' },
-        { id: 10, title: 'Learn to Build Android Apps for Beginners', file: cert10, type: 'pdf' },
-        { id: 11, title: 'Starting Programming with Kotlin', file: cert11, type: 'pdf' },
-        { id: 12, title: 'Career Acceleration and Productivity with Gemini', file: cert12, type: 'pdf' },
+        { id: 7, title: 'Research Journal 1', file: cert1, type: 'pdf', thumbnail: thumbnail1 },
+        { id: 8, title: 'Research Journal 2', file: cert4, type: 'pdf', thumbnail: thumbnail4 },
+        { id: 9, title: 'HKI Certificate', file: cert9, type: 'pdf', thumbnail: thumbnail9 },
+        { id: 10, title: 'Certificate of Learn to Build Android Apps for Beginners', file: cert10, type: 'pdf', thumbnail: thumbnail10 },
+        { id: 11, title: 'Certificate of Starting Programming with Kotlin', file: cert11, type: 'pdf', thumbnail: thumbnail11 },
+        { id: 12, title: 'Certificate of Career Acceleration and Productivity with Gemini', file: cert12, type: 'pdf', thumbnail: thumbnail12 },
     ];
 
     return (
@@ -62,18 +70,43 @@ const Achievements = () => {
                                 overflow: 'hidden',
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                position: 'relative' // Needed for stacking if necessary
                             }}>
                                 {item.type === 'image' ? (
                                     <img src={item.file} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 ) : (
-                                    <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                                        <embed
-                                            src={`${item.file}#toolbar=0&navpanes=0&scrollbar=0`}
-                                            type="application/pdf"
-                                            style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
-                                        />
-                                    </div>
+                                    <>
+                                        {/* Desktop: Show Embed */}
+                                        <div className="desktop-only" style={{ width: '100%', height: '100%' }}>
+                                            <embed
+                                                src={`${item.file}#toolbar=0&navpanes=0&scrollbar=0`}
+                                                type="application/pdf"
+                                                style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
+                                            />
+                                        </div>
+
+                                        {/* Mobile: Show Thumbnail or Icon Fallback */}
+                                        <div className="mobile-only" style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            background: 'rgba(0,0,0,0.2)',
+                                            flexDirection: 'column',
+                                            gap: '10px'
+                                        }}>
+                                            {item.thumbnail ? (
+                                                <img src={item.thumbnail} alt="PDF Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            ) : (
+                                                <>
+                                                    <FaFilePdf size={50} color="#e5e5e5" />
+                                                    <span style={{ fontSize: '0.9rem', color: '#ccc' }}>PDF Document</span>
+                                                </>
+                                            )}
+                                        </div>
+                                    </>
                                 )}
                             </div>
                             <div>
