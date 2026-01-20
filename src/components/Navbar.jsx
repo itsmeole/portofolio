@@ -79,18 +79,20 @@ const Navbar = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '10px',
-                            background: 'rgba(26, 26, 26, 0.6)',
+                            background: 'var(--nav-bg)',
                             backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.08)',
+                            border: '1px solid var(--glass-border)',
                             position: 'relative',
                             zIndex: 1001,
-                            borderRadius: '50px'
+                            borderRadius: '50px',
+                            color: 'var(--text-main)',
+                            boxShadow: '0 4px 20px var(--glass-shadow)'
                         }}
                     >
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                            <span style={{ width: '18px', height: '2px', background: 'white' }}></span>
-                            <span style={{ width: '18px', height: '2px', background: 'white' }}></span>
-                            <span style={{ width: '12px', height: '2px', background: 'white' }}></span>
+                            <span style={{ width: '18px', height: '2px', background: 'currentColor' }}></span>
+                            <span style={{ width: '18px', height: '2px', background: 'currentColor' }}></span>
+                            <span style={{ width: '12px', height: '2px', background: 'currentColor' }}></span>
                         </div>
                         Dashboard
                     </button>
@@ -100,14 +102,14 @@ const Navbar = () => {
                             position: 'absolute',
                             top: '120%',
                             left: 0,
-                            background: 'rgba(26, 26, 26, 0.8)',
+                            background: 'var(--nav-bg)',
                             backdropFilter: 'blur(15px)',
-                            border: '1px solid rgba(255,255,255,0.08)',
+                            border: '1px solid var(--glass-border)',
                             borderRadius: '16px',
                             padding: '10px',
                             minWidth: '160px',
                             zIndex: 1000,
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                            boxShadow: '0 10px 30px var(--glass-shadow)',
                             display: 'flex',
                             flexDirection: 'column',
                             gap: '5px'
@@ -116,11 +118,11 @@ const Navbar = () => {
                                 onClick={() => { setIsLightMode(false); setShowThemeMenu(false); }}
                                 style={{
                                     padding: '10px 8px',
-                                    color: 'white',
+                                    color: 'var(--text-main)',
                                     cursor: 'pointer',
                                     borderRadius: '10px',
                                     transition: 'background 0.2s',
-                                    background: !isLightMode ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                    background: !isLightMode ? 'var(--nav-item-bg-hover)' : 'transparent',
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '8px'
@@ -132,11 +134,11 @@ const Navbar = () => {
                                 onClick={() => { setIsLightMode(true); setShowThemeMenu(false); }}
                                 style={{
                                     padding: '10px 8px',
-                                    color: 'white',
+                                    color: 'var(--text-main)',
                                     cursor: 'pointer',
                                     borderRadius: '10px',
                                     transition: 'background 0.2s',
-                                    background: isLightMode ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                    background: isLightMode ? 'var(--nav-item-bg-hover)' : 'transparent',
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '8px'
@@ -150,13 +152,14 @@ const Navbar = () => {
 
                 {/* DESKTOP: Right-Aligned Pill Navigation */}
                 <div className="desktop-only" style={{
-                    background: 'rgba(26, 26, 26, 0.6)',
+                    background: 'var(--nav-bg)',
                     backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    border: '1px solid var(--glass-border)',
                     borderRadius: '50px',
                     padding: '6px 8px',
                     display: 'flex',
-                    gap: '5px'
+                    gap: '5px',
+                    boxShadow: '0 4px 20px var(--glass-shadow)'
                 }}>
                     {navItems.map((item) => (
                         <button
@@ -165,7 +168,7 @@ const Navbar = () => {
                             style={{
                                 background: 'transparent',
                                 border: 'none',
-                                color: '#aaa',
+                                color: 'var(--nav-text)',
                                 padding: '8px 24px',
                                 borderRadius: '30px',
                                 cursor: 'pointer',
@@ -173,8 +176,8 @@ const Navbar = () => {
                                 fontWeight: 500,
                                 transition: 'all 0.3s ease'
                             }}
-                            onMouseOver={(e) => { e.target.style.color = 'white'; e.target.style.background = 'rgba(255,255,255,0.05)'; }}
-                            onMouseOut={(e) => { e.target.style.color = '#aaa'; e.target.style.background = 'transparent'; }}
+                            onMouseOver={(e) => { e.target.style.color = 'var(--text-main)'; e.target.style.background = 'var(--nav-item-bg-hover)'; }}
+                            onMouseOut={(e) => { e.target.style.color = 'var(--nav-text)'; e.target.style.background = 'transparent'; }}
                         >
                             {item.name}
                         </button>
@@ -191,15 +194,15 @@ const Navbar = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '12px',
-                            background: 'rgba(26, 26, 26, 0.6)',
+                            background: 'var(--nav-bg)',
                             backdropFilter: 'blur(15px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
+                            border: '1px solid var(--glass-border)',
                             borderRadius: '50px',
                             zIndex: 1001,
-                            color: 'white',
+                            color: 'var(--text-main)',
                             fontSize: '1.2rem',
                             fontWeight: 600,
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                            boxShadow: '0 10px 40px var(--glass-shadow)',
                             cursor: 'pointer'
                         }}
                     >
@@ -222,13 +225,13 @@ const Navbar = () => {
                             top: '120%',
                             left: '0',
                             width: '300px',
-                            background: 'rgba(20, 20, 20, 0.95)',
+                            background: 'var(--nav-bg)',
                             backdropFilter: 'blur(20px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
+                            border: '1px solid var(--glass-border)',
                             borderRadius: '24px',
                             padding: '20px',
                             zIndex: 1000,
-                            boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+                            boxShadow: '0 20px 50px var(--glass-shadow)',
                             display: 'flex',
                             flexDirection: 'column',
                             gap: '15px'
@@ -248,8 +251,8 @@ const Navbar = () => {
                                         textAlign: 'center',
                                         padding: '10px',
                                         borderRadius: '50px',
-                                        background: !isLightMode ? '#333' : 'transparent',
-                                        color: !isLightMode ? 'white' : '#aaa',
+                                        background: !isLightMode ? 'var(--btn-bg)' : 'transparent',
+                                        color: !isLightMode ? 'var(--btn-text)' : 'var(--text-muted)',
                                         cursor: 'pointer',
                                         transition: 'all 0.3s ease'
                                     }}
@@ -263,8 +266,8 @@ const Navbar = () => {
                                         textAlign: 'center',
                                         padding: '10px',
                                         borderRadius: '50px',
-                                        background: isLightMode ? 'white' : 'transparent',
-                                        color: isLightMode ? 'black' : '#aaa',
+                                        background: isLightMode ? 'var(--btn-bg)' : 'transparent',
+                                        color: isLightMode ? 'var(--btn-text)' : 'var(--text-muted)',
                                         cursor: 'pointer',
                                         transition: 'all 0.3s ease'
                                     }}
@@ -282,13 +285,13 @@ const Navbar = () => {
                                         style={{
                                             background: 'transparent',
                                             border: 'none',
-                                            color: 'white',
+                                            color: 'var(--text-main)',
                                             padding: '12px',
                                             textAlign: 'center',
                                             fontSize: '1.1rem',
                                             fontWeight: 500,
                                             cursor: 'pointer',
-                                            borderBottom: '1px solid rgba(255,255,255,0.05)'
+                                            borderBottom: '1px solid var(--divider-color)'
                                         }}
                                     >
                                         {item.name}

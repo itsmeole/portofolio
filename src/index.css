@@ -1,17 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+  /* Default Theme (Dark Mode) */
   --bg-color: #050505;
-  --text-color: #f8fafc;
+  --text-main: #f8fafc;
+  --text-secondary: #cccccc;
+  --text-muted: #a3a3a3;
   --primary-color: #ffffff;
-  /* White for high contrast in dark mode */
-  --secondary-color: #1e293b;
-  --accent-color: #a3a3a3;
-  /* Subtler gray for accent */
+
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.37);
+
+  --nav-bg: rgba(26, 26, 26, 0.6);
+  --nav-text: #aaaaaa;
+  --nav-text-hover: #ffffff;
+  --nav-item-bg-hover: rgba(255, 255, 255, 0.05);
+
+  --card-bg: transparent;
+  --card-border: #333333;
+
+  --btn-bg: #1a1a1a;
+  --btn-text: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.1);
+  --btn-hover-bg: #2a2a2a;
+
+  --icon-color: #ffffff;
+  --divider-color: #222222;
+
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
+
+  --bg-gradient-1: rgba(255, 255, 255, 0.03);
+  --bg-gradient-2: rgba(255, 255, 255, 0.03);
+
+  --heading-bg-text-color: #222;
+  --heading-bg-text-opacity: 0.1;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+  --bg-color: #f8fafc;
+  --text-main: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --primary-color: #0f172a;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-text: #64748b;
+  --nav-text-hover: #0f172a;
+  --nav-item-bg-hover: rgba(0, 0, 0, 0.05);
+
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: #e2e8f0;
+
+  --btn-bg: #ffffff;
+  --btn-text: #1e293b;
+  --btn-border: #e2e8f0;
+  --btn-hover-bg: #f1f5f9;
+
+  --icon-color: #1e293b;
+  --divider-color: #e2e8f0;
+
+  --bg-gradient-1: rgba(0, 0, 0, 0.02);
+  --bg-gradient-2: rgba(0, 0, 0, 0.02);
+
+  --heading-bg-text-color: #cbd5e1;
+  --heading-bg-text-opacity: 0.3;
 }
 
 * {
@@ -23,13 +82,14 @@
 body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
   /* Subtle lighting effect in background */
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+    radial-gradient(circle at 10% 20%, var(--bg-gradient-1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, var(--bg-gradient-2) 0%, transparent 40%);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -56,8 +116,16 @@ ul {
   border-radius: 4px;
 }
 
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* Utilities */
@@ -77,8 +145,7 @@ ul {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 3rem;
-  color: #222;
-  /* Very dark for background effect */
+  color: var(--heading-bg-text-color);
   text-transform: uppercase;
   letter-spacing: 2px;
   position: absolute;
@@ -86,8 +153,7 @@ ul {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  opacity: 0.1;
-  /* Translucent background text */
+  opacity: var(--heading-bg-text-opacity);
   pointer-events: none;
   z-index: 0;
 }
@@ -110,58 +176,48 @@ ul {
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-color);
   transform: translateY(-5px);
 }
 
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background: #1a1a1a;
-  color: white;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border-radius: 50px;
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--btn-border);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  background: #2a2a2a;
+  background: var(--btn-hover-bg);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary-color);
 }
 
 .hero-btn {
   padding: 16px 40px;
   font-size: 1.1rem;
   border-radius: 50px;
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--btn-text);
 }
 
-/* Light Mode */
-body.light-mode {
-  --bg-color: #f8fafc;
-  --text-color: #1e293b;
-  --primary-color: #0f172a;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  background-image: none;
-}
-
-body.light-mode .heading {
-  color: #e2e8f0;
-  opacity: 1;
+body.light-mode .hero-btn {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Dropdown Animation */
@@ -195,13 +251,16 @@ body.light-mode .heading {
   white-space: nowrap;
   pointer-events: none;
 
-  /* Gradient: Dark to Transparent (or Light to Transparent based on request "terang ke transparan") 
-     User said: "memiliki gradasi terang ke transparan" (light to transparent)
-     Since bg is black, "terang" (light) means visible gray/white fading to transparent.
-  */
+  /* Gradient: Dark to Transparent */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.light-mode .gradient-text-bg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 80%);
+  -webkit-background-clip: text;
   background-clip: text;
 }
 

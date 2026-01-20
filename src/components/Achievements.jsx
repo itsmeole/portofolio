@@ -65,7 +65,7 @@ const Achievements = () => {
                         >
                             <div style={{
                                 height: '200px',
-                                background: 'rgba(255,255,255,0.05)',
+                                background: 'var(--glass-border)',
                                 borderRadius: '12px',
                                 overflow: 'hidden',
                                 display: 'flex',
@@ -93,7 +93,7 @@ const Achievements = () => {
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            background: 'rgba(0,0,0,0.2)',
+                                            background: 'rgba(0,0,0,0.1)',
                                             flexDirection: 'column',
                                             gap: '10px'
                                         }}>
@@ -101,8 +101,8 @@ const Achievements = () => {
                                                 <img src={item.thumbnail} alt="PDF Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                             ) : (
                                                 <>
-                                                    <FaFilePdf size={50} color="#e5e5e5" />
-                                                    <span style={{ fontSize: '0.9rem', color: '#ccc' }}>PDF Document</span>
+                                                    <FaFilePdf size={50} color="var(--icon-color)" />
+                                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>PDF Document</span>
                                                 </>
                                             )}
                                         </div>
@@ -110,15 +110,16 @@ const Achievements = () => {
                                 )}
                             </div>
                             <div>
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: 'white' }}>{item.title}</h3>
+                                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: 'var(--text-main)' }}>{item.title}</h3>
                                 <a href={item.file} target="_blank" rel="noopener noreferrer" className="btn" style={{
                                     padding: '8px 20px',
                                     fontSize: '0.9rem',
                                     borderRadius: '50px',
-                                    background: 'rgba(255,255,255,0.1)',
+                                    background: 'var(--btn-bg)',
                                     display: 'inline-block',
                                     textDecoration: 'none',
-                                    color: 'white'
+                                    color: 'var(--btn-text)',
+                                    border: '1px solid var(--btn-border)'
                                 }}>
                                     View Document
                                 </a>

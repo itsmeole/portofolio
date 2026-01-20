@@ -68,20 +68,20 @@ const Experience = () => {
                             borderLeft: 'none',
                             borderRight: 'none',
                             borderRadius: '0',
-                            borderBottom: '1px solid #333',
+                            borderBottom: '1px solid var(--divider-color)',
                             background: 'transparent',
                             padding: '2rem 1rem'
                         }}>
                             <div>
-                                <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: '#fff', fontWeight: 600 }}>{exp.title}</h3>
-                                <h4 style={{ fontSize: '1rem', color: '#888', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{exp.company}</h4>
-                                <ul style={{ paddingLeft: '1.2rem', listStyleType: 'disc', color: '#aaa', fontSize: '0.95rem' }}>
+                                <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--text-main)', fontWeight: 600 }}>{exp.title}</h3>
+                                <h4 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{exp.company}</h4>
+                                <ul style={{ paddingLeft: '1.2rem', listStyleType: 'disc', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                                     {exp.desc.map((item, i) => (
                                         <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
-                            <p style={{ fontSize: '0.9rem', color: '#555', marginTop: '1.5rem', textAlign: 'right', fontWeight: 500 }}>{exp.period}</p>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '1.5rem', textAlign: 'right', fontWeight: 500 }}>{exp.period}</p>
                         </div>
                     ))}
                 </div>

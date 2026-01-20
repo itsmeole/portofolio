@@ -12,15 +12,15 @@ const Skills = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
 
                     <div className="glass-card">
-                        <h3 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.5rem' }}>Hard Skills</h3>
+                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Hard Skills</h3>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                             {hardSkills.map((skill, index) => (
                                 <span key={index} style={{
                                     padding: '10px 20px',
-                                    background: '#1a1a1a',
-                                    border: '1px solid #333',
+                                    background: 'var(--btn-bg)',
+                                    border: '1px solid var(--btn-border)',
                                     borderRadius: '50px',
-                                    color: '#ccc',
+                                    color: 'var(--text-secondary)',
                                     fontSize: '0.9rem'
                                 }}>
                                     {skill}
@@ -30,15 +30,15 @@ const Skills = () => {
                     </div>
 
                     <div className="glass-card">
-                        <h3 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.5rem' }}>Soft Skills</h3>
+                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Soft Skills</h3>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                             {softSkills.map((skill, index) => (
                                 <span key={index} style={{
                                     padding: '10px 20px',
-                                    background: '#1a1a1a',
-                                    border: '1px solid #333',
+                                    background: 'var(--btn-bg)',
+                                    border: '1px solid var(--btn-border)',
                                     borderRadius: '50px',
-                                    color: '#ccc',
+                                    color: 'var(--text-secondary)',
                                     fontSize: '0.9rem'
                                 }}>
                                     {skill}
@@ -48,15 +48,15 @@ const Skills = () => {
                     </div>
 
                     <div className="glass-card">
-                        <h3 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.5rem' }}>Languages</h3>
+                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Languages</h3>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                             {languages.map((skill, index) => (
                                 <span key={index} style={{
                                     padding: '10px 20px',
-                                    background: '#1a1a1a',
-                                    border: '1px solid #333',
+                                    background: 'var(--btn-bg)',
+                                    border: '1px solid var(--btn-border)',
                                     borderRadius: '50px',
-                                    color: '#ccc',
+                                    color: 'var(--text-secondary)',
                                     fontSize: '0.9rem'
                                 }}>
                                     {skill}

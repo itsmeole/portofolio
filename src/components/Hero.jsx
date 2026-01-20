@@ -65,7 +65,7 @@ const Hero = () => {
 
                 {/* Right Side - Text Content */}
                 <div style={{ flex: '1 1 500px', zIndex: 2 }}>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.2rem', color: 'var(--text-color)' }}>
+                    <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.2rem', color: 'var(--text-main)' }}>
                         Hi.. I'm
                     </h2>
                     <h1 style={{
@@ -74,14 +74,14 @@ const Hero = () => {
                         fontWeight: 800,
                         lineHeight: 1.1,
                         marginBottom: '1.5rem',
-                        color: 'var(--text-color)'
+                        color: 'var(--text-main)'
                     }}>
                         Leonard putra <span style={{ fontSize: '3rem' }}>👋🏼</span>
                     </h1>
 
                     <p style={{
                         fontSize: '1.1rem',
-                        color: '#a3a3a3',
+                        color: 'var(--text-muted)',
                         maxWidth: '600px',
                         marginBottom: '3rem',
                         fontWeight: 400,

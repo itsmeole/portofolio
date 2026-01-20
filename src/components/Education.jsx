@@ -27,15 +27,15 @@ const Education = () => {
                     {education.map((edu, index) => (
                         <div key={index} className="glass-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
                             <div>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'white' }}>{edu.school}</h3>
-                                {edu.major && <p style={{ color: '#888' }}>{edu.major}</p>}
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>{edu.school}</h3>
+                                {edu.major && <p style={{ color: 'var(--text-secondary)' }}>{edu.major}</p>}
                             </div>
                             <div style={{
                                 padding: '8px 16px',
-                                border: '1px solid #444',
+                                border: '1px solid var(--btn-border)',
                                 borderRadius: '20px',
                                 fontSize: '0.9rem',
-                                color: '#aaa',
+                                color: 'var(--text-muted)',
                                 whiteSpace: 'nowrap'
                             }}>
                                 {edu.period}
