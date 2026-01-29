@@ -87,7 +87,7 @@ const Hero = () => {
                         fontWeight: 400,
                         textAlign: 'justify'
                     }}>
-                        Computer Science student with a strong leadership track record. Experienced in statistical data management and high work discipline from an industrial background.
+                        Computer Science student with a strong leadership track record. Experienced in statistical data management and high work discipline from an industrial background and now i'm available for opportunity.
                     </p>
 
                     <div className="btn-container" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
