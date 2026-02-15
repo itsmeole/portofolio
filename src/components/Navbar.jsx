@@ -50,7 +50,8 @@ const Navbar = () => {
     const navItems = [
         { name: 'About Me', id: 'about' },
         { name: 'Experience', id: 'experience' },
-        { name: 'Project', id: 'skills' },
+        { name: 'Skills', id: 'skills' },
+        { name: 'Projects', id: 'projects' }, // Added Projects link
         { name: 'Education', id: 'education' },
         { name: 'Achievements', id: 'achievements' },
         { name: 'Contact', id: 'contact' },

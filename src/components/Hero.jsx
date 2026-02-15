@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImg from '../assets/foto.jpeg';
+import profileImg from '../assets/foto2.jpeg';
 import cvFile from '../assets/profile.png';
 
 const Hero = () => {
@@ -53,7 +53,7 @@ const Hero = () => {
                         position: 'relative',
                         width: '380px',
                         height: '380px',
-                        background: '#e5e5e5',
+                        // background: '#e5e5e5',
                         borderRadius: '100px 20px 20px 20px',
                         overflow: 'hidden',
                         zIndex: 1,
