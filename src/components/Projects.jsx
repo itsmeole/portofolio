@@ -31,7 +31,7 @@ const Projects = () => {
         {
             title: "Inventory Cashier",
             desc: "Inventory Cashier is a web-based application designed to manage cashier operations and inventory control for retail stores. The system enables users to record sales transactions, manage product data, monitor stock availability in real-time, and generate automatic sales reports and recapitulations.",
-            link: "https://inventory-cashier-9sti6lu2g-itsmeoles-projects.vercel.app/",
+            link: "https://inventory-cashier-ddrzrx84q-itsmeoles-projects.vercel.app/",
             preview: inventoryImg
         },
         {
