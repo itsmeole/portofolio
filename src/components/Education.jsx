@@ -1,4 +1,5 @@
 import React from 'react';
+import { GlowCard } from './ui/spotlight-card';
 
 const Education = () => {
     const education = [
@@ -25,7 +26,7 @@ const Education = () => {
                 <h2 className="section-title">Academic Background</h2>
                 <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                     {education.map((edu, index) => (
-                        <div key={index} className="glass-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                        <GlowCard key={index} glowColor="blue" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', padding: '2.5rem' }}>
                             <div>
                                 <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>{edu.school}</h3>
                                 {edu.major && <p style={{ color: 'var(--text-secondary)' }}>{edu.major}</p>}
@@ -40,7 +41,7 @@ const Education = () => {
                             }}>
                                 {edu.period}
                             </div>
-                        </div>
+                        </GlowCard>
                     ))}
                 </div>
             </div>

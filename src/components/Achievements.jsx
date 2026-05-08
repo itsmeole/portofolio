@@ -1,4 +1,5 @@
 import React from 'react';
+import { GlowCard } from './ui/spotlight-card';
 
 // Importing assets specifically
 import cert1 from '../assets/capaian dan penghargaan/Analisis Biaya Dan Efektivitas WhatsApp Blast Terhadap Respons Pelanggan Dengan Regresi Berantai.pdf';
@@ -51,7 +52,7 @@ const Achievements = () => {
                     gap: '30px'
                 }}>
                     {achievements.map((item) => (
-                        <div key={item.id} className="glass-card" style={{
+                        <GlowCard key={item.id} glowColor="blue" style={{
                             padding: '20px',
                             borderRadius: '20px',
                             display: 'flex',
@@ -124,7 +125,7 @@ const Achievements = () => {
                                     View Document
                                 </a>
                             </div>
-                        </div>
+                        </GlowCard>
                     ))}
                 </div>
             </div>

@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { GlowCard } from './ui/spotlight-card';
+import { ParticleTextEffect } from './ui/particle-text-effect';
 
 const LoadingScreen = ({ onFinished }) => {
-    const [fadeOut, setFadeOut] = useState(false);
+    const [phase, setPhase] = useState('INPUT'); // INPUT, ANIMATING, FADING_OUT
+    const [name, setName] = useState('');
 
-    useEffect(() => {
-        // Start fade-out after 2.2 seconds
-        const fadeTimer = setTimeout(() => {
-            setFadeOut(true);
-        }, 2200);
-
-        // Notify parent after fade-out completes (2.2s + 0.6s transition)
-        const doneTimer = setTimeout(() => {
-            onFinished();
-        }, 2800);
-
-        return () => {
-            clearTimeout(fadeTimer);
-            clearTimeout(doneTimer);
-        };
-    }, [onFinished]);
-
-    // 5 circles for a simple flexbox row
-    const dots = [0, 1, 2, 3, 4];
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (name.trim()) {
+            setPhase('ANIMATING');
+            
+            // Wait 4 seconds for the animation to play, then fade out
+            setTimeout(() => {
+                setPhase('FADING_OUT');
+                
+                // Notify parent after fade-out completes (0.6s transition)
+                setTimeout(() => {
+                    onFinished();
+                }, 600);
+            }, 4000);
+        }
+    };
 
     return (
         <div style={{
@@ -33,51 +33,73 @@ const LoadingScreen = ({ onFinished }) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '2.3rem',
-            opacity: fadeOut ? 0 : 1,
+            opacity: phase === 'FADING_OUT' ? 0 : 1,
             transition: 'opacity 0.6s ease',
-            pointerEvents: fadeOut ? 'none' : 'all',
+            pointerEvents: phase === 'FADING_OUT' ? 'none' : 'all',
         }}>
-            {/* Flat row of dots */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                {dots.map((_, i) => (
-                    <div
-                        key={i}
-                        style={{
-                            width: '20px',
-                            height: '20px',
-                            borderRadius: '50%',
-                            background: 'radial-gradient(circle at 35% 35%, #555, #1a1a1a)',
-                            boxShadow: '0 4px 18px rgba(0,0,0,0.7), inset 0 1px 3px rgba(255,255,255,0.12)',
-                            animation: `dotBounce 1.2s ease-in-out ${i * 0.12}s infinite`,
-                        }}
-                    />
-                ))}
-            </div>
-
-            {/* LOADING text */}
-            <span style={{
-                color: 'rgba(255,255,255,0.75)',
-                fontSize: '0.95rem',
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 500,
-                letterSpacing: '0.35em',
-                animation: 'loadingPulse 1.5s ease-in-out infinite',
-            }}>
-                LOADING
-            </span>
-
             <style>{`
-                @keyframes dotBounce {
-                    0%, 100% { transform: translateY(0) scale(1); }
-                    40%       { transform: translateY(-14px) scale(1.08); }
-                    60%       { transform: translateY(-8px) scale(1.04); }
-                }
-                @keyframes loadingPulse {
-                    0%, 100% { opacity: 0.5; }
-                    50%      { opacity: 1; }
+                @keyframes simpleFadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
                 }
             `}</style>
+            
+            {phase === 'INPUT' && (
+                <div style={{
+                    animation: 'simpleFadeIn 0.5s ease forwards'
+                }}>
+                    <GlowCard glowColor="purple" style={{ padding: '3rem', width: '90vw', maxWidth: '400px', textAlign: 'center' }}>
+                        <h2 style={{ color: 'var(--text-main)', marginBottom: '1.5rem', fontSize: '1.8rem', fontFamily: 'var(--font-heading)' }}>
+                            Welcome!
+                        </h2>
+                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <input
+                                type="text"
+                                placeholder="Enter your name..."
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                autoFocus
+                                style={{
+                                    padding: '14px 20px',
+                                    borderRadius: '50px',
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid var(--btn-border)',
+                                    color: 'var(--text-main)',
+                                    fontSize: '1rem',
+                                    outline: 'none',
+                                    transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                                    textAlign: 'center'
+                                }}
+                                onFocus={(e) => {
+                                    e.target.style.borderColor = 'var(--primary-color)';
+                                    e.target.style.boxShadow = '0 0 10px rgba(255,255,255,0.1)';
+                                }}
+                                onBlur={(e) => {
+                                    e.target.style.borderColor = 'var(--btn-border)';
+                                    e.target.style.boxShadow = 'none';
+                                }}
+                            />
+                            <button 
+                                type="submit" 
+                                className="btn" 
+                                disabled={!name.trim()} 
+                                style={{ 
+                                    opacity: name.trim() ? 1 : 0.5,
+                                    cursor: name.trim() ? 'pointer' : 'not-allowed'
+                                }}
+                            >
+                                Continue
+                            </button>
+                        </form>
+                    </GlowCard>
+                </div>
+            )}
+
+            {(phase === 'ANIMATING' || phase === 'FADING_OUT') && (
+                <div style={{ width: '100vw', height: '100vh', animation: 'simpleFadeIn 1s ease forwards' }}>
+                    <ParticleTextEffect word={`HELLO ${name.trim().toUpperCase()}`} />
+                </div>
+            )}
         </div>
     );
 };

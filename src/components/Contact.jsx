@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import { GlowCard } from './ui/spotlight-card';
 
 const Contact = () => {
     return (
@@ -11,7 +12,7 @@ const Contact = () => {
                     I'm always open to discussing product design work or partnership opportunities.
                 </p>
 
-                <div className="glass-card" style={{ maxWidth: '400px', margin: '0 auto', padding: '2rem' }}>
+                <GlowCard glowColor="purple" style={{ maxWidth: '400px', margin: '0 auto', padding: '2rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', fontSize: '2.5rem' }}>
                         <a href="mailto:leonardputra73@wastukancana.ac.id" style={{ color: 'var(--icon-color)', transition: 'transform 0.3s' }} onMouseOver={(e) => e.target.style.transform = 'scale(1.2)'} onMouseOut={(e) => e.target.style.transform = 'scale(1)'}>
                             <MdEmail />
@@ -26,7 +27,7 @@ const Contact = () => {
                             <FaWhatsapp />
                         </a>
                     </div>
-                </div>
+                </GlowCard>
             </div>
         </section>
     );

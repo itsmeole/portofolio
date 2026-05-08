@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaGithub } from 'react-icons/fa';
+import { GlowCard } from './ui/spotlight-card';
 
 // Example: Import your images here
 import aonimeImg from '../assets/aonime.png';
@@ -53,7 +54,7 @@ const Projects = () => {
                     gap: '2rem'
                 }}>
                     {projectList.map((project, index) => (
-                        <div key={index} className="glass-card" style={{
+                        <GlowCard key={index} glowColor="blue" style={{
                             padding: '1.5rem',
                             display: 'flex',
                             flexDirection: 'column',
@@ -136,11 +137,11 @@ const Projects = () => {
                             >
                                 <FaArrowRight />
                             </a>
-                        </div>
+                        </GlowCard>
                     ))}
 
                     {/* GitHub Link Card */}
-                    <div className="glass-card" style={{
+                    <GlowCard glowColor="purple" style={{
                         padding: '1.5rem',
                         display: 'flex',
                         flexDirection: 'column',
@@ -185,7 +186,7 @@ const Projects = () => {
                         >
                             <FaArrowRight />
                         </a>
-                    </div>
+                    </GlowCard>
                 </div>
             </div>
         </section>
