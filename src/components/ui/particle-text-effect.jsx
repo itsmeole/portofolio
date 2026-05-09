@@ -192,9 +192,20 @@ export function ParticleTextEffect({ word = "HELLO" }) {
 
     // Draw text
     offscreenCtx.fillStyle = "white";
-    // Adjust font size based on word length for a better fit
-    const fontSize = text.length > 8 ? 80 : 100;
+    
+    // Adjust font size dynamically to fit within 90% of canvas width
+    let fontSize = 100;
     offscreenCtx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
+    let textMetrics = offscreenCtx.measureText(text);
+    const maxWidth = canvas.width * 0.9;
+    
+    if (textMetrics.width > maxWidth) {
+        fontSize = Math.floor(fontSize * (maxWidth / textMetrics.width));
+        // Keep a minimum reasonable font size just in case
+        fontSize = Math.max(fontSize, 30);
+        offscreenCtx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
+    }
+
     offscreenCtx.textAlign = "center";
     offscreenCtx.textBaseline = "middle";
     offscreenCtx.fillText(text, canvas.width / 2, canvas.height / 2);

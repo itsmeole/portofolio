@@ -10,16 +10,16 @@ const LoadingScreen = ({ onFinished }) => {
         e.preventDefault();
         if (name.trim()) {
             setPhase('ANIMATING');
-            
+
             // Wait 4 seconds for the animation to play, then fade out
             setTimeout(() => {
                 setPhase('FADING_OUT');
-                
+
                 // Notify parent after fade-out completes (0.6s transition)
                 setTimeout(() => {
                     onFinished();
                 }, 600);
-            }, 4000);
+            }, 8000);
         }
     };
 
@@ -43,7 +43,7 @@ const LoadingScreen = ({ onFinished }) => {
                     to { opacity: 1; }
                 }
             `}</style>
-            
+
             {phase === 'INPUT' && (
                 <div style={{
                     animation: 'simpleFadeIn 0.5s ease forwards'
@@ -79,11 +79,11 @@ const LoadingScreen = ({ onFinished }) => {
                                     e.target.style.boxShadow = 'none';
                                 }}
                             />
-                            <button 
-                                type="submit" 
-                                className="btn" 
-                                disabled={!name.trim()} 
-                                style={{ 
+                            <button
+                                type="submit"
+                                className="btn"
+                                disabled={!name.trim()}
+                                style={{
                                     opacity: name.trim() ? 1 : 0.5,
                                     cursor: name.trim() ? 'pointer' : 'not-allowed'
                                 }}
