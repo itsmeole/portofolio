@@ -1,4 +1,5 @@
 import React from 'react';
+import { TiltEffect } from './ui/tilt-effect';
 
 const Experience = () => {
     const experiences = [
@@ -60,29 +61,29 @@ const Experience = () => {
                 <h2 className="section-title">Experience</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
                     {experiences.map((exp, index) => (
-                        <div key={index} className="glass-card" style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            borderTop: 'none',
-                            borderLeft: 'none',
-                            borderRight: 'none',
-                            borderRadius: '0',
-                            borderBottom: '1px solid var(--divider-color)',
-                            background: 'transparent',
-                            padding: '2rem 1rem'
-                        }}>
-                            <div>
-                                <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--text-main)', fontWeight: 600 }}>{exp.title}</h3>
-                                <h4 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{exp.company}</h4>
-                                <ul style={{ paddingLeft: '1.2rem', listStyleType: 'disc', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                                    {exp.desc.map((item, i) => (
-                                        <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
-                                    ))}
-                                </ul>
+                        <TiltEffect key={index}>
+                            <div className="glass-card" style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                height: '100%',
+                                minHeight: '300px',
+                                padding: '2rem',
+                                transition: 'transform 0.3s ease',
+                                cursor: 'default'
+                            }}>
+                                <div>
+                                    <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--text-main)', fontWeight: 600 }}>{exp.title}</h3>
+                                    <h4 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{exp.company}</h4>
+                                    <ul style={{ paddingLeft: '1.2rem', listStyleType: 'disc', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                                        {exp.desc.map((item, i) => (
+                                            <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '1.5rem', textAlign: 'right', fontWeight: 500 }}>{exp.period}</p>
                             </div>
-                            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '1.5rem', textAlign: 'right', fontWeight: 500 }}>{exp.period}</p>
-                        </div>
+                        </TiltEffect>
                     ))}
                 </div>
             </div>

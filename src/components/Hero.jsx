@@ -1,4 +1,5 @@
 import React from 'react';
+import { TiltEffect } from './ui/tilt-effect';
 import profileImg from '../assets/foto2.jpeg';
 import cvFile from '../assets/profile.png';
 
@@ -49,18 +50,20 @@ const Hero = () => {
                         ✦
                     </div>
 
-                    <div style={{
-                        position: 'relative',
-                        width: '380px',
-                        height: '380px',
-                        // background: '#e5e5e5',
-                        borderRadius: '100px 20px 20px 20px',
-                        overflow: 'hidden',
-                        zIndex: 1,
-                        boxShadow: '0 20px 40px rgba(0,0,0,0.5)'
-                    }}>
-                        <img src={profileImg} alt="Leonard Putra Sanjaya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </div>
+                    <TiltEffect perspective={1200} tiltFactor={15}>
+                        <div style={{
+                            position: 'relative',
+                            width: '380px',
+                            height: '380px',
+                            // background: '#e5e5e5',
+                            borderRadius: '100px 20px 20px 20px',
+                            overflow: 'hidden',
+                            zIndex: 1,
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.5)'
+                        }}>
+                            <img src={profileImg} alt="Leonard Putra Sanjaya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                    </TiltEffect>
                 </div>
 
                 {/* Right Side - Text Content */}

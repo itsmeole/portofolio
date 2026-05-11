@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlowCard } from './ui/spotlight-card';
+import { TiltEffect } from './ui/tilt-effect';
 
 const Skills = () => {
     const hardSkills = ["Data Analyst", "Data Management", "Beginner Web Developer"];
@@ -12,59 +13,65 @@ const Skills = () => {
                 <h2 className="section-title">Skills & Languages</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
 
-                    <GlowCard glowColor="blue" style={{ padding: '2.5rem' }}>
-                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Hard Skills</h3>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                            {hardSkills.map((skill, index) => (
-                                <span key={index} style={{
-                                    padding: '10px 20px',
-                                    background: 'var(--btn-bg)',
-                                    border: '1px solid var(--btn-border)',
-                                    borderRadius: '50px',
-                                    color: 'var(--text-secondary)',
-                                    fontSize: '0.9rem'
-                                }}>
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </GlowCard>
+                    <TiltEffect>
+                        <GlowCard glowColor="blue" style={{ padding: '2.5rem', height: '100%' }}>
+                            <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Hard Skills</h3>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                                {hardSkills.map((skill, index) => (
+                                    <span key={index} style={{
+                                        padding: '10px 20px',
+                                        background: 'var(--btn-bg)',
+                                        border: '1px solid var(--btn-border)',
+                                        borderRadius: '50px',
+                                        color: 'var(--text-secondary)',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </GlowCard>
+                    </TiltEffect>
 
-                    <GlowCard glowColor="green" style={{ padding: '2.5rem' }}>
-                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Soft Skills</h3>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                            {softSkills.map((skill, index) => (
-                                <span key={index} style={{
-                                    padding: '10px 20px',
-                                    background: 'var(--btn-bg)',
-                                    border: '1px solid var(--btn-border)',
-                                    borderRadius: '50px',
-                                    color: 'var(--text-secondary)',
-                                    fontSize: '0.9rem'
-                                }}>
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </GlowCard>
+                    <TiltEffect>
+                        <GlowCard glowColor="green" style={{ padding: '2.5rem', height: '100%' }}>
+                            <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Soft Skills</h3>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                                {softSkills.map((skill, index) => (
+                                    <span key={index} style={{
+                                        padding: '10px 20px',
+                                        background: 'var(--btn-bg)',
+                                        border: '1px solid var(--btn-border)',
+                                        borderRadius: '50px',
+                                        color: 'var(--text-secondary)',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </GlowCard>
+                    </TiltEffect>
 
-                    <GlowCard glowColor="orange" style={{ padding: '2.5rem' }}>
-                        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Languages</h3>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                            {languages.map((skill, index) => (
-                                <span key={index} style={{
-                                    padding: '10px 20px',
-                                    background: 'var(--btn-bg)',
-                                    border: '1px solid var(--btn-border)',
-                                    borderRadius: '50px',
-                                    color: 'var(--text-secondary)',
-                                    fontSize: '0.9rem'
-                                }}>
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </GlowCard>
+                    <TiltEffect>
+                        <GlowCard glowColor="orange" style={{ padding: '2.5rem', height: '100%' }}>
+                            <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-main)', fontSize: '1.5rem' }}>Languages</h3>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                                {languages.map((skill, index) => (
+                                    <span key={index} style={{
+                                        padding: '10px 20px',
+                                        background: 'var(--btn-bg)',
+                                        border: '1px solid var(--btn-border)',
+                                        borderRadius: '50px',
+                                        color: 'var(--text-secondary)',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </GlowCard>
+                    </TiltEffect>
 
                 </div>
             </div>

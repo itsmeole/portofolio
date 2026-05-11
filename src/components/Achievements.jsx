@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlowCard } from './ui/spotlight-card';
+import { TiltEffect } from './ui/tilt-effect';
 
 // Importing assets specifically
 import cert1 from '../assets/capaian dan penghargaan/Analisis Biaya Dan Efektivitas WhatsApp Blast Terhadap Respons Pelanggan Dengan Regresi Berantai.pdf';
@@ -52,80 +53,83 @@ const Achievements = () => {
                     gap: '30px'
                 }}>
                     {achievements.map((item) => (
-                        <GlowCard key={item.id} glowColor="blue" style={{
-                            padding: '20px',
-                            borderRadius: '20px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '15px',
-                            transition: 'transform 0.3s ease',
-                            cursor: 'pointer'
-                        }}
-                            onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
-                            onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                        >
-                            <div style={{
-                                height: '200px',
-                                background: 'var(--glass-border)',
-                                borderRadius: '12px',
-                                overflow: 'hidden',
+                        <TiltEffect key={item.id}>
+                            <GlowCard glowColor="blue" style={{
+                                padding: '20px',
+                                borderRadius: '20px',
                                 display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                position: 'relative' // Needed for stacking if necessary
-                            }}>
-                                {item.type === 'image' ? (
-                                    <img src={item.file} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                ) : (
-                                    <>
-                                        {/* Desktop: Show Embed */}
-                                        <div className="desktop-only" style={{ width: '100%', height: '100%' }}>
-                                            <embed
-                                                src={`${item.file}#toolbar=0&navpanes=0&scrollbar=0`}
-                                                type="application/pdf"
-                                                style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
-                                            />
-                                        </div>
-
-                                        {/* Mobile: Show Thumbnail or Icon Fallback */}
-                                        <div className="mobile-only" style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            background: 'rgba(0,0,0,0.1)',
-                                            flexDirection: 'column',
-                                            gap: '10px'
-                                        }}>
-                                            {item.thumbnail ? (
-                                                <img src={item.thumbnail} alt="PDF Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                            ) : (
-                                                <>
-                                                    <FaFilePdf size={50} color="var(--icon-color)" />
-                                                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>PDF Document</span>
-                                                </>
-                                            )}
-                                        </div>
-                                    </>
-                                )}
-                            </div>
-                            <div>
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: 'var(--text-main)' }}>{item.title}</h3>
-                                <a href={item.file} target="_blank" rel="noopener noreferrer" className="btn" style={{
-                                    padding: '8px 20px',
-                                    fontSize: '0.9rem',
-                                    borderRadius: '50px',
-                                    background: 'var(--btn-bg)',
-                                    display: 'inline-block',
-                                    textDecoration: 'none',
-                                    color: 'var(--btn-text)',
-                                    border: '1px solid var(--btn-border)'
+                                flexDirection: 'column',
+                                height: '100%',
+                                gap: '15px',
+                                transition: 'transform 0.3s ease',
+                                cursor: 'pointer'
+                            }}
+                                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
+                                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                            >
+                                <div style={{
+                                    height: '200px',
+                                    background: 'var(--glass-border)',
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    position: 'relative' // Needed for stacking if necessary
                                 }}>
-                                    View Document
-                                </a>
-                            </div>
-                        </GlowCard>
+                                    {item.type === 'image' ? (
+                                        <img src={item.file} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    ) : (
+                                        <>
+                                            {/* Desktop: Show Embed */}
+                                            <div className="desktop-only" style={{ width: '100%', height: '100%' }}>
+                                                <embed
+                                                    src={`${item.file}#toolbar=0&navpanes=0&scrollbar=0`}
+                                                    type="application/pdf"
+                                                    style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
+                                                />
+                                            </div>
+
+                                            {/* Mobile: Show Thumbnail or Icon Fallback */}
+                                            <div className="mobile-only" style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                background: 'rgba(0,0,0,0.1)',
+                                                flexDirection: 'column',
+                                                gap: '10px'
+                                            }}>
+                                                {item.thumbnail ? (
+                                                    <img src={item.thumbnail} alt="PDF Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                ) : (
+                                                    <>
+                                                        <FaFilePdf size={50} color="var(--icon-color)" />
+                                                        <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>PDF Document</span>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: 'var(--text-main)' }}>{item.title}</h3>
+                                    <a href={item.file} target="_blank" rel="noopener noreferrer" className="btn" style={{
+                                        padding: '8px 20px',
+                                        fontSize: '0.9rem',
+                                        borderRadius: '50px',
+                                        background: 'var(--btn-bg)',
+                                        display: 'inline-block',
+                                        textDecoration: 'none',
+                                        color: 'var(--btn-text)',
+                                        border: '1px solid var(--btn-border)'
+                                    }}>
+                                        View Document
+                                    </a>
+                                </div>
+                            </GlowCard>
+                        </TiltEffect>
                     ))}
                 </div>
             </div>
